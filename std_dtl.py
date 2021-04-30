@@ -1,3 +1,8 @@
+import logging
+
+logging.basicConfig(filename="student.log", level=logging.INFO)
+
+
 class Student:
 
     def __init__(self,name,standard,division,rollno,passeddata,faileddata,misseddata):
@@ -12,24 +17,24 @@ class Student:
 class Test(Student):
     
     def menu(self):
-	    print("\n1. Add Details and Display")
+	    logging.info("\n1. Add Details and Display")
 	    #  print("\n2. Display")
-	    print("\n2. Checking")
-	    print("\n3.Exit")
+	    logging.info("\n2. Checking")
+	    logging.info("\n3.Exit")
 	    try:
 	        enter = int(input("Please Select an Option: "))
 	    except ValueError:
-	        exit("\nHy! That's Not A Number")
+	        exit("\n Wrong Entry. Enter Again")
 	    else:
-	        print("\n")
+	        logging.info("\n")
 	    if (enter == 1):
 	        display()
 	    elif (enter == 2):
 	        search()
 	    elif (enter == 3):
-	        print("Thank You!")
+	        logging.info("Thank You!")
 	    elif(enter < 1 or enter > 3):
-	        print("Please Enter Valid Option")
+	        logging.info("Please Enter Correctly")
     
     
 
@@ -46,31 +51,29 @@ class Test(Student):
 
     def search(self):
         if(self.missedtest>=4 or self.failedtest>=4):
-            print("Need Instructor")
+            logging.info("Need Instructor")
         else:
-	        print("Study well!")
+	        logging.info("Study well!")
 	        
 ls =[]
 obj = Test('', 0,'', 0, 0, 0, 0)
-print("\nOperations used, ")
-print("\n1.Add and Display Student details\n2.Check Student Pass or Fail details\n3.Exit")    
+logging.info("\nOperations used, ")
+logging.info("\n1.Add and Display Student details\n2.Check Student Pass or Fail details\n3.Exit")    
  
 try:
     enter = int(input("Please Select an Option: "))
 except ValueError:
-    exit("\n Wrong Entry. Enter Again")
+    exit("\nHy! That's Not A Number")
 else:
-    print("\n")    
+    logging.info("\n")    
     
 if (enter == 1):
     obj.display()
 elif (enter == 2):
 	obj.search()
 elif (enter == 3):
-	print("Thank You!")
+	logging.info("Thank You!")
 elif(enter < 1 or enter > 3):
-	print("Please Enter Correctly")   
+	logging.info("Please Enter Valid Option")   
     
     
-    
-
