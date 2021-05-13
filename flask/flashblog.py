@@ -77,21 +77,6 @@ def check_info():
    return render_template('check.html', item = students.query.filter(or_(students.failed>=4, students.missed>=4)))
 
 
-
-
-#@app.route("/check_info")
-#def check_info():
-#  return render_template('check.html', rows = students.query.all() )
-
-#@app.route('/hello/<int:score>')
-#def hello_name(score):
- #  return render_template('hello.html', marks = score)
-
-
-
-
-
-
 @app.route("/delete_student")
 def delete_student():
     return render_template("delete_student.html")
