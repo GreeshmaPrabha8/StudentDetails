@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>student info</title>
+
+ <style>
+  body{
+   background-image: url('/static/2.jpg');
+   background-size: cover;
+   text-align: center;
+   font-weight: bold;
+   font-size: larger;
+
+  }
+
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+  a:hover, a:active {
+  background-color: red;
+  }
+
+ </style>
+
+ </head>
+ <body>
+ <h1 style="color: green">Student  Details</h1><br>
+
+ <table align="center" cellspacing = "2" cellpadding = "13" border = "10" width="700" >
+
+ <thead>
+ <td>Name</td>
+ <td>Standard</td>
+ <td>Division</td>
+ <td>Roll No</td>
+ <td>Passed Test Details</td>
+ <td>Failed Test Details</td>
+ <td>Missed Test Details</td>
+ 
+
+
+ </thead>
+ {% for row in rows %}
+ <tr>
+ <td>{{row["name"]}}</td>
+ <td>{{row["standard"]}}</td>
+ <td>{{row["division"]}}</td>
+ <td>{{row["rollno"]}}</td>
+ <td>{{row["passed"]}}</td>
+ <td>{{row["failed"]}}</td>
+ <td>{{row["missed"]}}</td>
+ </tr>
+ {% endfor %}   
+ </table>
+ <br><br>
+ <a href="/">Go back to home page</a>
+ </body>
+ </html> 
