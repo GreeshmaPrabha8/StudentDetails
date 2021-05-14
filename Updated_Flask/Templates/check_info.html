@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>students who need HELP!</title>
+
+ <style>
+  body{
+   background-image: url('/static/2.jpg');
+   background-size: cover;
+   text-align: center;
+   font-weight: bold;
+   font-size: larger;
+
+  }
+
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+  a:hover, a:active {
+  background-color: red;
+  }
+
+ </style>
+
+ </head>
+ <body>
+ <h1>Students who need HELP!</h1><br>
+
+
+ <table align="center" cellspacing = "2" cellpadding = "13" border = "10" width="700" >
+
+ <thead>
+ <td>Name</td>
+ <td>Standard</td>
+ <td>Division</td>
+ <td>Roll No</td>
+ <td>Passed Test Details</td>
+ <td>Failed Test Details</td>
+ <td>Missed Test Details</td>
+ 
+
+
+ </thead>
+ {% if items %}
+  {% for item in items %}
+ <tr>
+ <td>{{item.name}}</td>
+ <td>{{item.standard}}</td>
+ <td>{{item.division}}</td>
+ <td>{{item.rollno}}</td>
+ <td>{{item.passed}}</td>
+ <td>{{item.failed}}</td>
+ <td>{{item.missed}}</td>
+ </tr>
+   {% endfor %}   
+ {% endif %}
+ </table>
+ <br><br>
+  
+    
+<a href="/">Go back to home page</a>    
+ </body>
+ </html> 
