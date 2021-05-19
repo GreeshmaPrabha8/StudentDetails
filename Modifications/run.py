@@ -45,12 +45,7 @@ class User(db.Model):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), primary_key=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-
-    def __repr__(self):
-        return f"User('{self.username}', '{self.email}')"
-
-
-       
+      
 
 
 
@@ -87,9 +82,6 @@ def login():
 	if form.validate_on_submit():
 		user = User.query.filter_by(email=form.email.data).first()
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
-			#login_user(user, remember=form.remember.data)
-			#next_page = request.args.get('next')
-			#return redirect(next_page) if next_page else redirect(url_for('index'))
 			flash('User Authenticated Successfully', 'success')
 			return redirect(url_for('index'))
 		else:
