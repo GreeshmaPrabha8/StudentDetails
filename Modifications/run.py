@@ -148,7 +148,6 @@ def check_info():
 
 @app.route('/query/', methods=['GET', 'POST'])
 def query_item():
-	error = None
 	form = queryform()
 	if form.validate_on_submit():
 		q = items.query.filter_by(rollno=form.rollno.data).all()
@@ -204,5 +203,4 @@ def delete_item(rollno):
 
 
 if __name__ == '__main__':
-   db.create_all()
    app.run(debug = True)
