@@ -158,8 +158,8 @@ def query_item():
 			msg = ('Record was not found')
 			return render_template('record.html',msg=msg)
 
-			#error = "No items"
-	return render_template('query.html', form=form, error=error)
+			
+	return render_template('query.html', form=form)
 
 
 @app.route('/edit/<int:rollno>', methods=['GET', 'POST'])
