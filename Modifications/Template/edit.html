@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>Updated Details</title>
+
+  <style>
+   body{
+    background-image: url('/static/2.jpg');
+    background-size: cover;
+    text-align: center;
+   }
+
+
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+   input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+   }
+
+   input[type=email] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+   }
+
+   input[type=submit] {
+
+    width: 5%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   }
+
+   input[type=submit]:hover {
+    background-color: #45a049;
+   }
+  </style>
+ </head>
+ <body>
+		<h1>Edit item page</h1>
+
+		{% if form %}
+			<form action="{{url_for('edit_item', rollno=form.rollno.data)}}" method="POST">
+				{{form.hidden_tag()}}
+				{{form.name.label}}<br />
+				{{form.name}}<br />
+				{{form.standard.label}}<br />
+				{{form.standard}}<br /><br />
+				{{form.division.label}}<br />
+				{{form.division}}<br /><br />
+				{{form.rollno.label}}<br />
+				{{form.rollno}}<br /><br />
+				{{form.passed.label}}<br />
+				{{form.passed}}<br /><br />
+				{{form.failed.label}}<br />
+				{{form.failed}}<br /><br />
+				{{form.missed.label}}<br />
+				{{form.missed}}<br /><br />
+				<input class="btn btn-lg btn-primary" role="button" type="submit" value="Update">
+			<br><br>
+			<a href="/index">Go back to home page</a>
+			</form>
+		{% endif %}
+ </body>
+ </html> 
